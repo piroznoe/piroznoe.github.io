@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Believe — Support</title>
+<meta name="description" content="Support for Believe, an iPhone app for saying affirmations out loud to your own reflection.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --surface: #ffffff;
+    --text: #1a1512;
+    --muted: #6b615a;
+    --accent: #a86a1e;
+    --rule: #e3dbd2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface: #100c0b;
+      --text: #f6f0ea;
+      --muted: #9a8e86;
+      --accent: #e0a15c;
+      --rule: #2b2321;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 80px;
+    background: var(--surface);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 40rem; margin: 0 auto; }
+  header { padding: 48px 0 8px; }
+  .wordmark {
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 28px;
+  }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; font-weight: 700; }
+  h2 { font-size: 19px; line-height: 1.3; margin: 40px 0 10px; font-weight: 600; }
+  .lead { font-size: 19px; }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 44px 0 0; }
+  nav.langs { margin: 32px 0 0; font-size: 15px; }
+  nav.langs a {
+    display: inline-block;
+    padding: 6px 14px;
+    margin-right: 8px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--muted);
+  }
+  nav.langs a[aria-current="true"] { color: var(--text); border-color: var(--accent); }
+  /* Without JavaScript no data-lang is set and both versions stay visible. */
+  html[data-lang="en"] section[lang="ru"],
+  html[data-lang="ru"] section[lang="en"] { display: none; }
+</style>
+<script>
+  (function () {
+    var wanted = new URLSearchParams(location.search).get("lang");
+    if (wanted !== "en" && wanted !== "ru") {
+      var tags = navigator.languages || [navigator.language || "en"];
+      wanted = String(tags[0] || "en").toLowerCase().indexOf("ru") === 0 ? "ru" : "en";
+    }
+    var root = document.documentElement;
+    root.setAttribute("data-lang", wanted);
+    root.setAttribute("lang", wanted);
+  })();
+</script>
+</head>
+<body>
+<main>
+
+<section lang="en">
+  <header>
+    <p class="wordmark">Believe</p>
+    <h1>Support</h1>
+  </header>
+
+  <p class="lead">Write to <a href="mailto:matyuhin9932@gmail.com">matyuhin9932@gmail.com</a> — questions,
+  bugs and phrase suggestions all welcome. Replies come from a person, so give it a day or two.</p>
+
+  <h2>The camera does not turn on</h2>
+  <p>Open iOS Settings → Believe and allow camera access. If access is off, the app says so and offers
+  a shortcut to Settings. The practice also works with the camera off — the phrases stay, the
+  reflection does not.</p>
+
+  <h2>I want my own phrases</h2>
+  <p>Open the mode list from the mirror screen, tap <em>New mode</em>, give it a name and add your
+  phrases. Modes you made yourself can be edited with the pencil and removed with a swipe.</p>
+
+  <h2>Where is my data</h2>
+  <p>On your iPhone, and nowhere else. Believe has no accounts and no servers. Deleting the app
+  deletes everything it stored. See the <a href="/privacy/?lang=en">privacy policy</a> for the details.</p>
+
+  <h2>What Believe is not</h2>
+  <p>Believe is a wellbeing practice, not therapy. It does not diagnose or treat anything and it does
+  not replace professional help. If you are going through something heavy, talk to a doctor or a
+  therapist.</p>
+
+  <h2>Requirements</h2>
+  <p class="muted">iPhone with iOS 17 or later. English and Russian.</p>
+
+  <hr>
+  <nav class="langs">
+    <a href="?lang=en" aria-current="true">English</a>
+    <a href="?lang=ru">Русский</a>
+  </nav>
+</section>
+
+<section lang="ru">
+  <header>
+    <p class="wordmark">Believe</p>
+    <h1>Поддержка</h1>
+  </header>
+
+  <p class="lead">Пишите на <a href="mailto:matyuhin9932@gmail.com">matyuhin9932@gmail.com</a> — вопросы,
+  ошибки и предложения фраз одинаково уместны. Отвечает человек, так что дайте день-два.</p>
+
+  <h2>Не включается камера</h2>
+  <p>Откройте «Настройки» iOS → Believe и разрешите доступ к камере. Если доступ выключен, приложение
+  скажет об этом и предложит перейти в настройки. Практика работает и без камеры: фразы остаются,
+  отражение — нет.</p>
+
+  <h2>Хочу свои фразы</h2>
+  <p>Откройте список режимов с экрана зеркала, нажмите «Новый режим», дайте ему название и добавьте
+  свои фразы. Созданные вами режимы правятся карандашом и удаляются свайпом.</p>
+
+  <h2>Где мои данные</h2>
+  <p>На вашем iPhone и больше нигде. У Believe нет аккаунтов и серверов. Удаление приложения удаляет
+  всё, что оно сохранило. Подробности — в <a href="/privacy/?lang=ru">политике конфиденциальности</a>.</p>
+
+  <h2>Чем Believe не является</h2>
+  <p>Believe — практика для самочувствия, а не терапия. Приложение ничего не диагностирует и не лечит
+  и не заменяет помощь специалиста. Если вам по-настоящему тяжело, поговорите с врачом или
+  психотерапевтом.</p>
+
+  <h2>Требования</h2>
+  <p class="muted">iPhone с iOS 17 или новее. Английский и русский языки.</p>
+
+  <hr>
+  <nav class="langs">
+    <a href="?lang=en">English</a>
+    <a href="?lang=ru" aria-current="true">Русский</a>
+  </nav>
+</section>
+
+</main>
+</body>
+</html>
